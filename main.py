@@ -8,7 +8,7 @@
 import time
 from turtle import Screen
 from player import Player
-from cars import Car
+from cars import Cars
 from score import Scoreboard
 
 # Setting up the Screen
@@ -18,7 +18,7 @@ s.tracer(0)
 
 # Setting up the Player, Cars and Scoreboard
 player = Player()
-car = Car()
+car = Cars()
 scoreboard = Scoreboard()
 
 # Setting up the Controls
@@ -32,19 +32,19 @@ while game_on:
     s.update()
 
     # Create the Cars
-    car.create()
+    car.create_car()
     car.move()
 
     # Detect collision with the Car
     for car in car.cars_list:
         if car.distance(player) < 20:
-            scoreboard.game_over()
             game_on = False
+            scoreboard.game_over()
 
     # Detect if the Player has reached the finish line
     if player.ycor() > 280:
         player.start()
         car.level_up()
-        scoreboard.update_score()
+        scoreboard.update()
 
 s.exitonclick()
