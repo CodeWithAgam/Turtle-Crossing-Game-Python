@@ -10,6 +10,7 @@ class Car():
     def __init__(self):
         super().__init__()
         self.cars_list = []
+        self.carspeed = STARTING_DISTANCE
 
     def create(self):
         random_num = randint(1, 6)
@@ -26,3 +27,5 @@ class Car():
         for car in self.cars_list:
             car.forward(STARTING_DISTANCE)
 
+    def level_up(self):
+        self.carspeed += MOVE

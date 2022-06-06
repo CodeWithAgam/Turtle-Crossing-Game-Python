@@ -8,7 +8,7 @@
 import time
 from turtle import Screen
 from player import Player
-from assets import Car
+from cars import Car
 from score import Scoreboard
 
 # Setting up the Screen
@@ -43,7 +43,8 @@ while game_on:
 
     # Detect if the Player has reached the finish line
     if player.ycor() > 280:
-        player.change_level()
-        # scoreboard.update_score()
+        player.start()
+        car.level_up()
+        scoreboard.update_score()
 
 s.exitonclick()

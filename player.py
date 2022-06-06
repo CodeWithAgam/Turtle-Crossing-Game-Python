@@ -13,13 +13,11 @@ class Player(Turtle):
         self.color("black")
         self.shape("turtle")
         self.speed(0)
-        self.goto(STARTING_POSITION)
-        self.setheading(90)
+        self.start()
 
     def move(self):
         self.forward(MOVE_DISTANCE)
         
-    def change_level(self):
-        if self.ycor() > FINISH_Y:
-            self.goto(STARTING_POSITION)
-            self.setheading(90)
+    def start(self):
+        self.goto(STARTING_POSITION)
+        self.setheading(90)
