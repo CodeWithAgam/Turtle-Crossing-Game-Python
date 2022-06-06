@@ -41,4 +41,9 @@ while game_on:
             scoreboard.game_over()
             game_on = False
 
+    # Detect if the Player has reached the finish line
+    if player.ycor() > 280:
+        player.change_level()
+        # scoreboard.update_score()
+
 s.exitonclick()
